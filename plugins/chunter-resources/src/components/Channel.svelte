@@ -198,7 +198,7 @@
   }
 </script>
 
-<div class="flex-col vScroll" bind:this={div} on:scroll={handleScroll}>
+<div class="flex-col vScroll content" bind:this={div} on:scroll={handleScroll}>
   <div class="grower" />
   {#if showFixed}
     <div class="ml-2 pr-2 fixed">
@@ -226,6 +226,9 @@
 </div>
 
 <style lang="scss">
+  .content {
+    padding: 0 1rem;
+  }
   .grower {
     flex-grow: 10;
     flex-shrink: 5;

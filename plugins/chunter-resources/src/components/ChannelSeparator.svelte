@@ -24,7 +24,7 @@
 </script>
 
 <div class="w-full text-sm flex-center whitespace-nowrap" class:flex-reverse={reverse} class:new={isNew}>
-  <div class:ml-8={!reverse} class:mr-4={reverse}><Label label={title} {params} /></div>
+  <div class:ml-4={!reverse} class:mr-4={reverse}><Label label={title} {params} /></div>
   <div class:ml-4={!reverse} class:mr-4={reverse} class:line />
 </div>
 

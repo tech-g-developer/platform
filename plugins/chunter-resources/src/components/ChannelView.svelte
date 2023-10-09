@@ -102,6 +102,6 @@
 
 <style lang="scss">
   .reference {
-    margin: 1.25rem 2.5rem;
+    margin: 1.25rem 2rem;
   }
 </style>

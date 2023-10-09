@@ -34,6 +34,7 @@
 
   export let _id: Ref<Message>
   export let currentSpace: Ref<Space>
+  export let showHeader = true
   let message: Message | undefined
   let commentId = generateId() as Ref<ThreadMessage>
 
@@ -178,6 +179,7 @@
   let loading = false
 </script>
 
+{#if showHeader}
 <div class="header">
   <div class="title"><Label label={chunter.string.Thread} /></div>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -190,6 +192,7 @@
     <IconClose size="medium" />
   </div>
 </div>
+{/if}
 <div class="flex-col vScroll content" bind:this={div}>
   {#if message}
     <MsgView {message} thread isSaved={savedMessagesIds.includes(message._id)} {savedAttachmentsIds} />
@@ -226,7 +229,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1.75rem 0 2.5rem;
+    padding: 0 2rem;
     height: 4rem;
     min-height: 4rem;
 
@@ -246,7 +249,11 @@
       }
     }
   }
+
+  .content {
+    padding: 0 1rem;
+  }
   .ref-input {
-    margin: 1.25rem 2.5rem;
+    margin: 1.25rem 2rem;
   }
 </style>
