@@ -55,6 +55,7 @@ import ThreadParentPresenter from './components/ThreadParentPresenter.svelte'
 import ThreadView from './components/ThreadView.svelte'
 import ThreadViewPanel from './components/ThreadViewPanel.svelte'
 import Threads from './components/Threads.svelte'
+import Thread from './components/Thread.svelte'
 import TxBacklinkCreate from './components/activity/TxBacklinkCreate.svelte'
 import TxBacklinkReference from './components/activity/TxBacklinkReference.svelte'
 import TxCommentCreate from './components/activity/TxCommentCreate.svelte'
@@ -292,6 +293,7 @@ export default async (): Promise<Resources> => ({
     DirectMessageInput,
     EditChannel,
     Threads,
+    Thread,
     ThreadView,
     SavedMessages,
     CommentPanel
