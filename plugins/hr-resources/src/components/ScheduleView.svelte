@@ -178,14 +178,15 @@
   function updateStaff (
     staff: Staff[],
     departments: Ref<Department>[],
+    employeeRequests: Map<Ref<Staff>, Request[]>,
     descendants: Map<Ref<Department>, Department[]>,
     departmentById: Map<Ref<Department>, Department>
   ) {
-    departmentStaff = staff.filter((p) => departments.includes(p.department))
+    departmentStaff = staff.filter((p) => departments.includes(p.department) || employeeRequests.has(p._id))
     updateEditableList(departmentById, departmentStaff, descendants)
   }
 
-  $: updateStaff(staff, departments, descendants, departmentById)
+  $: updateStaff(staff, departments, employeeRequests, descendants, departmentById)
 
   const reportQuery = createQuery()
 
@@ -289,12 +290,15 @@
       <MonthView
         {departmentStaff}
         {employeeRequests}
+        {types}
         {startDate}
         {endDate}
         {editableList}
         {currentDate}
+        {timeReports}
         {holidays}
         {department}
+        {departments}
         {departmentById}
         {staffDepartmentMap}
       />
